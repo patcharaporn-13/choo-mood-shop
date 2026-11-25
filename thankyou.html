@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ขอบคุณสำหรับคำสั่งซื้อ | CHOCO MOOD</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .nav-links a[aria-current="page"] { border-color: var(--pink); }
+    body { display: flex; flex-direction: column; min-height: 100vh; }
+    .footer { margin-top: auto; }
+    main { display: grid; place-items: center; flex: 1; padding-block: var(--space-4); }
+    .thanks { max-width: 520px; text-align: center; }
+    .thanks p { margin-block: var(--space-2) var(--space-3); }
+    .thanks-icon { display: grid; place-items: center; width: 80px; height: 80px; margin: 0 auto var(--space-2); font-size: 2.2rem; background: var(--pink); border-radius: 50%; }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <nav class="container nav">
+      <a class="logo" href="index.html">CHOCO MOOD</a>
+      <ul class="nav-links">
+        <li><a href="index.html">หน้าแรก</a></li>
+        <li><a href="product.html">สินค้า</a></li>
+        <li><a href="order.html">สั่งซื้อ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container thanks">
+      <span class="thanks-icon" aria-hidden="true">✓</span>
+      <h1>ขอบคุณค่ะ</h1>
+      <p>ส่งคำสั่งซื้อเรียบร้อยแล้ว ร้านจะติดต่อกลับตามช่องทางที่ให้ไว้</p>
+      <a class="btn" href="index.html">กลับหน้าแรก</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p class="logo">CHOCO MOOD</p>
+    <p>Bite Your Mood, Sweeten Your Day</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

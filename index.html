@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHOCO MOOD | Bite Your Mood, Sweeten Your Day</title>
+  <meta name="description" content="ช็อกโกแลตแท้คราฟต์รูปแบบแท่ง คัดสรรเมล็ดโกโก้คุณภาพดี ผสานรสชาติละมุนและดีไซน์สุดน่ารัก เพื่อเติมเต็มทุกอารมณ์ในแต่ละวันของคุณ">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .nav-links a[aria-current="page"] { border-color: var(--pink); }
+    .hero { display: flex; align-items: center; min-height: calc(100vh - 80px); min-height: calc(100svh - 80px); padding-block: var(--space-4); }
+    .hero-badge { display: inline-block; margin-bottom: var(--space-2); padding: 0.25rem 1rem; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.15em; background: var(--pink); border-radius: var(--radius-pill); }
+    .hero h1 { max-width: 16ch; margin-inline: auto; text-wrap: balance; }
+    .hero-art { display: block; width: min(220px, 55%); margin: 0 auto var(--space-3); }
+    .mood-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: var(--space-3); }
+    .mood-card { display: flex; flex-direction: column; align-items: center; gap: var(--space-2); padding: var(--space-4) var(--space-3); text-align: center; background: var(--white); border: 1px solid #D9C3B0; border-radius: var(--radius); box-shadow: var(--shadow); transition: transform 0.25s, box-shadow 0.25s; }
+    .mood-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); border-color: var(--accent); }
+    .mood-card--milk { --accent: #F4C2C2; --on-accent: #4A2C2A; }
+    .mood-card--dark { --accent: #3D231E; --on-accent: #FFFDFB; }
+    .mood-card--set { --accent: #E8D3B5; --on-accent: #4A2C2A; }
+    .mood-icon { display: grid; place-items: center; width: 88px; height: 88px; background: var(--accent); color: var(--on-accent); border-radius: 50%; }
+    .mood-icon svg { width: 48px; height: 48px; }
+    .mood-card .tag { color: var(--on-accent); background: var(--accent); }
+    .mood-card h3 { padding-bottom: 6px; border-bottom: 4px solid var(--accent); }
+    .mood-more { margin-top: auto; font-weight: 500; }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <nav class="container nav">
+      <a class="logo" href="index.html">CHOCO MOOD</a>
+      <ul class="nav-links">
+        <li><a href="index.html" aria-current="page">หน้าแรก</a></li>
+        <li><a href="product.html">สินค้า</a></li>
+        <li><a href="order.html">สั่งซื้อ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <svg class="hero-art" viewBox="0 0 220 150" aria-hidden="true">
+          <circle cx="110" cy="75" r="72" fill="#F4C2C2" opacity="0.45"/>
+          <g transform="rotate(-10 110 75)">
+            <rect x="60" y="25" width="100" height="100" rx="14" fill="#4A2C2A"/>
+            <g fill="#6B433D">
+              <rect x="69" y="34" width="38" height="38" rx="8"/><rect x="113" y="34" width="38" height="38" rx="8"/>
+            </g>
+            <rect x="54" y="80" width="112" height="52" rx="12" fill="#FFFDFB" stroke="#F4C2C2" stroke-width="3"/>
+            <path d="M110 118s-16-9-16-19a8 8 0 0 1 16-3 8 8 0 0 1 16 3c0 10-16 19-16 19Z" fill="#F4C2C2"/>
+          </g>
+        </svg>
+        <span class="hero-badge">CHOCO MOOD</span>
+        <h1>Bite Your Mood, Sweeten Your Day</h1>
+        <p>ช็อกโกแลตแท้คราฟต์รูปแบบแท่ง คัดสรรเมล็ดโกโก้คุณภาพดี ผสานรสชาติละมุนและดีไซน์สุดน่ารัก เพื่อเติมเต็มทุกอารมณ์ในแต่ละวันของคุณ</p>
+        <a class="btn" href="product.html">ดูสินค้าทั้งหมด</a>
+      </div>
+    </section>
+
+    <section class="section section--white">
+      <div class="container">
+        <div class="section-title">
+          <h2>วันนี้คุณอยู่ใน Mood ไหน</h2>
+          <p>เลือกรสชาติที่ใช่สำหรับอารมณ์ของคุณ</p>
+        </div>
+        <div class="mood-grid">
+          <a class="mood-card mood-card--milk" href="product.html?mood=Milk">
+            <span class="mood-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M24 40S7 30 7 18a9 9 0 0 1 17-4 9 9 0 0 1 17 4c0 12-17 22-17 22Z"/>
+              </svg>
+            </span>
+            <span class="tag">Milk</span>
+            <h3>ละมุนหวานใจ</h3>
+            <p>ช็อกโกแลตนมเนื้อเนียน หวานนุ่ม สำหรับวันที่อยากเติมความสดใส</p>
+            <span class="mood-more">เลือกชม →</span>
+          </a>
+          <a class="mood-card mood-card--dark" href="product.html?mood=Dark">
+            <span class="mood-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="11" y="6" width="26" height="36" rx="5"/><path d="M24 6v36M11 18h26M11 30h26"/>
+              </svg>
+            </span>
+            <span class="tag">Dark</span>
+            <h3>เข้มข้นมั่นใจ</h3>
+            <p>ดาร์กช็อกโกแลตหอมโกโก้ชัดเจน สำหรับวันที่ต้องการพลังและความมั่นใจ</p>
+            <span class="mood-more">เลือกชม →</span>
+          </a>
+          <a class="mood-card mood-card--set" href="product.html?mood=Set">
+            <span class="mood-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="8" y="19" width="32" height="22" rx="4"/><path d="M6 19h36M24 19v22M24 19c-12 0-12-12-5-11 4 1 5 11 5 11Zm0 0c12 0 12-12 5-11-4 1-5 11-5 11Z"/>
+              </svg>
+            </span>
+            <span class="tag">Set</span>
+            <h3>ชุดแบ่งปันความสุข</h3>
+            <p>รวมรสชาติไว้ในชุดเดียว เหมาะเป็นของขวัญให้คนพิเศษ</p>
+            <span class="mood-more">เลือกชม →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="logo">CHOCO MOOD</p>
+    <p>Bite Your Mood, Sweeten Your Day</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

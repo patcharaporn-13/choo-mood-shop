@@ -1,0 +1,241 @@
+/* =========================================
+   CHOCO MOOD SHOP : ธีมกลางสำหรับทุกหน้า
+   ========================================= */
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Prompt:wght@300;400;500;600&display=swap");
+
+:root {
+  --cream: #FAF5F0;
+  --white: #FFFDFB;
+  --choco: #4A2C2A;
+  --cocoa: #3D231E;
+  --pink: #F4C2C2;
+  --pink-soft: #FCE8E8;
+  --line: #EDE0D6;
+
+  --font: "Plus Jakarta Sans", "Prompt", sans-serif;
+  --radius-sm: 12px;
+  --radius: 24px;
+  --radius-pill: 999px;
+  --shadow: 0 8px 30px rgba(74, 44, 42, 0.08);
+  --shadow-hover: 0 14px 40px rgba(74, 44, 42, 0.14);
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2.5rem;
+  --space-5: clamp(3rem, 8vw, 6rem);
+}
+
+/* ---------- พื้นฐาน ---------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font);
+  background: var(--cream);
+  color: var(--choco);
+  line-height: 1.7;
+}
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+h1, h2, h3 { line-height: 1.35; font-weight: 600; }
+h1 { font-size: clamp(2rem, 6vw, 3.5rem); }
+h2 { font-size: clamp(1.5rem, 4vw, 2.25rem); }
+h3 { font-size: 1.15rem; }
+:focus-visible { outline: 3px solid var(--choco); outline-offset: 3px; }
+
+/* ---------- โครงหน้า ---------- */
+.container { width: min(1100px, 100% - 2.5rem); margin-inline: auto; }
+.section { padding-block: var(--space-5); }
+.section--white { background: var(--white); }
+.section-title { text-align: center; margin-bottom: var(--space-4); }
+.section-title p { opacity: 0.8; margin-top: var(--space-1); }
+
+/* ---------- แถบเมนู ---------- */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(255, 253, 251, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  padding-block: var(--space-2);
+}
+.logo { font-size: 1.3rem; font-weight: 700; letter-spacing: 0.08em; }
+.nav-links { display: flex; gap: var(--space-3); list-style: none; }
+.nav-links a { padding-bottom: 4px; border-bottom: 2px solid transparent; }
+.nav-links a:hover { border-color: var(--pink); }
+
+/* ---------- Hero ---------- */
+.hero {
+  padding-block: var(--space-5);
+  text-align: center;
+  background: radial-gradient(circle at top, var(--pink-soft), var(--cream) 65%);
+}
+.hero p { max-width: 34rem; margin: var(--space-2) auto var(--space-3); }
+
+/* ---------- ปุ่ม ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  min-height: 46px;
+  padding: 0.6rem 1.6rem;
+  font: 500 1rem var(--font);
+  color: var(--white);
+  background: var(--choco);
+  border: 2px solid var(--choco);
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+.btn:hover { transform: translateY(-2px); box-shadow: var(--shadow); background: var(--cocoa); }
+.btn--pink { color: var(--choco); background: var(--pink); border-color: var(--pink); }
+.btn--pink:hover { background: var(--pink-soft); }
+.btn--outline { color: var(--choco); background: transparent; }
+.btn--outline:hover { color: var(--white); }
+.btn--block { width: 100%; }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; box-shadow: none; }
+
+/* ---------- สีประจำสินค้า ---------- */
+[data-id="choco-milk-80"] {
+  --sku: #F4C2C2;
+  --sku-soft: #FDEEEA;
+  --sku-text: #4A2C2A;
+}
+[data-id="choco-dark-70-80"] {
+  --sku: #3D231E;
+  --sku-soft: #EFE4DE;
+  --sku-text: #FFFDFB;
+}
+
+/* ---------- การ์ดสินค้า ---------- */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 360px));
+  justify-content: center;
+  gap: var(--space-4);
+}
+.product-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--white);
+  border: 2px solid var(--sku, var(--line));
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.product-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); }
+.product-image {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  background: var(--sku-soft, var(--pink-soft));
+}
+.product-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-1);
+  padding: var(--space-3);
+}
+.tag {
+  padding: 0.15rem 0.85rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--sku-text, var(--choco));
+  background: var(--sku, var(--pink));
+  border-radius: var(--radius-pill);
+}
+.product-size { font-size: 0.9rem; opacity: 0.75; }
+.product-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  width: 100%;
+  margin-top: auto;
+  padding-top: var(--space-2);
+}
+.price { font-size: 1.4rem; font-weight: 700; }
+.product-card .btn { color: var(--sku-text, var(--white)); background: var(--sku, var(--choco)); border-color: var(--sku, var(--choco)); }
+.product-card .btn:hover { filter: brightness(1.08); }
+
+/* ---------- ปุ่มเลือกสินค้า ---------- */
+.options { display: flex; flex-wrap: wrap; gap: var(--space-1); }
+.option {
+  min-height: 44px;
+  padding: 0.5rem 1.2rem;
+  font: 500 0.95rem var(--font);
+  color: var(--choco);
+  background: var(--white);
+  border: 2px solid var(--sku, var(--pink));
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+}
+.option.is-active, .option[aria-pressed="true"] {
+  color: var(--sku-text, var(--choco));
+  background: var(--sku, var(--pink));
+}
+
+/* ---------- ฟอร์มสั่งซื้อ ---------- */
+.form {
+  display: grid;
+  gap: var(--space-2);
+  max-width: 560px;
+  margin-inline: auto;
+  padding: clamp(1.25rem, 5vw, 2.5rem);
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.field { display: grid; gap: 0.35rem; }
+.field label { font-weight: 500; }
+.field input, .field select, .field textarea {
+  width: 100%;
+  min-height: 46px;
+  padding: 0.65rem 1rem;
+  font: 400 1rem var(--font);
+  color: var(--choco);
+  background: var(--cream);
+  border: 2px solid var(--line);
+  border-radius: var(--radius-sm);
+}
+.field textarea { min-height: 100px; resize: vertical; }
+.field input:focus, .field select:focus, .field textarea:focus {
+  outline: none;
+  border-color: var(--choco);
+  box-shadow: 0 0 0 4px var(--pink-soft);
+}
+.form-message { text-align: center; font-weight: 500; }
+
+/* ---------- Footer ---------- */
+.footer {
+  padding: var(--space-4) var(--space-2);
+  text-align: center;
+  color: var(--cream);
+  background: var(--cocoa);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+  .nav { justify-content: center; }
+  .nav-links { gap: var(--space-2); font-size: 0.95rem; }
+  .product-grid { gap: var(--space-3); }
+  .hero .btn { width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}

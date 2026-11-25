@@ -1,0 +1,22 @@
+[
+  {
+    "id": "choco-milk-80",
+    "name": "Creamy Milk Chocolate",
+    "mood": "sweet",
+    "type": "bar",
+    "size": "80g",
+    "price": 145,
+    "image": "images/milk.jpg",
+    "description": "ช็อกโกแลตนมแท่ง เนื้อเนียนนุ่ม หวานละมุน เติมความสุขให้ทุกช่วงเวลา"
+  },
+  {
+    "id": "choco-dark-70-80",
+    "name": "70% Intense Dark Chocolate",
+    "mood": "confident",
+    "type": "bar",
+    "size": "80g",
+    "price": 155,
+    "image": "images/dark.jpg",
+    "description": "ดาร์กช็อกโกแลต 70% รสเข้มข้น หอมโกโก้ สำหรับคนที่ชอบความชัดเจนมั่นใจ"
+  }
+]

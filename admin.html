@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>รายการคำสั่งซื้อ | CHOCO MOOD</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .nav-links a[aria-current="page"] { border-color: var(--pink); }
+    body { display: flex; flex-direction: column; min-height: 100vh; }
+    .footer { margin-top: auto; }
+    .table-wrap { overflow-x: auto; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); }
+    #ordersTable { width: 100%; min-width: 820px; border-collapse: collapse; }
+    #ordersTable th, #ordersTable td { padding: 0.85rem 1rem; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+    #ordersTable th { background: var(--pink-soft); font-weight: 600; white-space: nowrap; }
+    #ordersTable td { white-space: pre-line; }
+    #ordersTable tbody tr:last-child td { border-bottom: 0; }
+    #ordersTable tbody tr:hover { background: var(--cream); }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <nav class="container nav">
+      <a class="logo" href="index.html">CHOCO MOOD</a>
+      <ul class="nav-links">
+        <li><a href="index.html">หน้าแรก</a></li>
+        <li><a href="product.html">สินค้า</a></li>
+        <li><a href="order.html">สั่งซื้อ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <h1>รายการคำสั่งซื้อ</h1>
+          <p>เรียงจากรายการล่าสุด รีเฟรชหน้าเพื่อโหลดข้อมูลใหม่</p>
+        </div>
+        <div class="table-wrap">
+          <table id="ordersTable">
+            <thead>
+              <tr>
+              <th scope="col">วันเวลา</th>
+              <th scope="col">ชื่อลูกค้า</th>
+              <th scope="col">เบอร์โทร/Line</th>
+              <th scope="col">รายการสินค้า</th>
+              <th scope="col">จำนวนเงินรวม</th>
+              <th scope="col">หมายเหตุ</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="logo">CHOCO MOOD</p>
+    <p>Bite Your Mood, Sweeten Your Day</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
